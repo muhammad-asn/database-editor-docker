@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  adminer:
+    image: dbeaver/cloudbeaver:latest
+    container_name: dbeaver
+    ports:
+      - 8080:8978
+    volumes:
+      - ./var/cloudbeaver/workspace:/opt/cloudbeaver/workspace
+    networks:
+      - db-editor
+networks:
+  db-editor:
+    external: true 
